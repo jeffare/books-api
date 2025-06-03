@@ -1,13 +1,16 @@
 pipeline {
     agent any
+    environment {
+        DOCKER_HUB_USERNAME =jeffare9x
+    }
     stages {
 stage('Build Docker Image') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 script {
-                    app = docker.build("<DOCKER_HUB_USERNAME>/train-schedule")
+                    app = docker.build("<DOCKER_HUB_USERNAME>/books-api")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
