@@ -11,15 +11,12 @@ stage('Build Docker Image') {
             steps {
                 script {
                     app = docker.build("jeffare9x/books-api")
-                    app.inside {
-                        sh 'echo $(curl localhost:8080)'
-                    }
                 }
             }
         }
 stage('Push Docker Image') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 script {
