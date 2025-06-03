@@ -10,7 +10,7 @@ stage('Build Docker Image') {
             }
             steps {
                 script {
-                    app = docker.build("<DOCKER_HUB_USERNAME>/books-api")
+                    app = docker.build("jeffare9x/books-api")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
