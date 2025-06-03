@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_HUB_USERNAME =jeffare9x
+        DOCKER_HUB_USERNAME ='jeffare9x'
     }
     stages {
 stage('Build Docker Image') {
